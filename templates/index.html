@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Notes App</h1>
+        <div class="mb-3">
+            <a href="{{ url_for('notes') }}" class="btn btn-primary">Notes</a>
+            <a href="{{ url_for('add_note') }}" class="btn btn-primary">Add note</a>
+            <a href="{{ url_for('users') }}" class="btn btn-primary">Users</a>
+            <a href="{{ url_for('add_user') }}" class="btn btn-primary">Add user</a>
+            <a href="{{ url_for('tags') }}" class="btn btn-primary">Tags</a>
+            <a href="{{ url_for('add_tag') }}" class="btn btn-primary">Add tag</a>
+            <a href="{{ url_for('search') }}" class="btn btn-primary">Search</a>
+        </div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+</html>

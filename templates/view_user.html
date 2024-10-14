@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+        <ul>
+            <li><strong>Username:</strong> {{ user.username }}</li>
+            <li><strong>Email:</strong> {{ user.email }}</li>
+        </ul>
+
+        <!-- Вывод заметок пользователя -->
+        {% if user_notes %}
+        <h2>User's Notes:</h2>
+        <ul>
+            {% for note in user_notes %}
+            <li>
+                <strong>Title:</strong> {{ note.title }}<br>
+                <strong>Content:</strong> {{ note.content }}<br>
+                <strong>Tags:</strong> {{ note.tags | join(', ') }}
+
+                <br>
+                <a href="{{ url_for('view_note', note_id=note['_id']) }}" class="btn btn-primary">View</a>
+                <a href="{{ url_for('edit_note', note_id=note['_id']) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ url_for('delete_note', note_id=note['_id']) }}" class="btn btn-danger">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No notes available for this user.</p>
+        {% endif %}
+
+        <a href="{{ url_for('users') }}">Back to Users</a>
+    </div>
+</body>
+
+</html>

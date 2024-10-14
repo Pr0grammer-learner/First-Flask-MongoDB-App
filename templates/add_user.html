@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <!-- Ваши стили здесь, если необходимо -->
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Add User</h1>
+        <form method="post">
+            <!-- Ваши поля для ввода данных пользователя -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add User</button>
+        </form>
+        <a href="{{ url_for('users') }}" class="btn btn-secondary">Back to Users</a>
+        <!-- Ваши скрипты здесь, если необходимо -->
+    </div>
+</body>
+
+</html>

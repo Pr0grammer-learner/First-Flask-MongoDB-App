@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Note</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">{{ note.title }}</h1>
+        <p>{{ note.content }}</p>
+        <small>Tags: {{ note.tags | join(', ') }}</small>
+        <br>
+        {% if note.user_id %}
+            {% set user = get_user_by_id(note.user_id) %}
+            {% if user %}
+                <small>Created by: {{ user.username }}</small>
+            {% else %}
+                <small>Created by: Unknown</small>
+            {% endif %}
+        {% else %}
+            <small>Created by: Unknown</small>
+        {% endif %}
+        <br>
+        <a href="{{ url_for('notes') }}" class="btn btn-secondary">Back to Notes</a>
+    </div>
+</body>
+
+</html>

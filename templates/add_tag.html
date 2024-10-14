@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tag</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Add Tag</h1>
+        <form method="post">
+            <div class="form-group">
+                <label for="tag_name">Tag Name</label>
+                <input type="text" class="form-control" id="tag_name" name="tag_name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Tag</button>
+        </form>
+        <a href="{{ url_for('tags') }}" class="btn btn-secondary">Back to Tags</a>
+    </div>
+</body>
+
+</html>

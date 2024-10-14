@@ -1,0 +1,120 @@
+/* Основные стили для всего приложения */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Стили для навигации */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+/* Стили для главной страницы */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заметок */
+.note {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: box-shadow 0.3s;
+    background-color: #fafafa; 
+}
+
+.note:hover {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовок заметки */
+.note h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #444; 
+}
+
+/* Стили для форм */
+form {
+    margin: 20px 0;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+/* Стили для фокуса на инпутах */
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #333; 
+    outline: none; 
+}
+
+/* Стили для кнопок отправки формы */
+form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px; 
+}
+
+form input[type="submit"]:hover {
+    background-color: #575757;
+}
+
+/* Стили для кнопок */
+.button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #575757;
+}
+
+/* Стили для сообщений об ошибках и успехе */
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}

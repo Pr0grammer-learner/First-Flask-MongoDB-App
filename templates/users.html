@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Users</h1>
+        <ul class="list-group">
+            {% for user in users %}
+            <li class="list-group-item">
+                <h5>{{ user.username }}</h5>
+                <p>Email: {{ user.email }}</p>
+                <a href="{{ url_for('view_user', user_id=user['_id']) }}" class="btn btn-primary">View</a>
+                <a href="{{ url_for('edit_user', user_id=user['_id']) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ url_for('delete_user', user_id=user['_id']) }}" class="btn btn-danger">Delete</a>
+                <!-- Вывод заметок пользователя -->
+                {% if user.user_notes %}
+                <h6>Notes:</h6>
+                <ul>
+                    {% for note in user.user_notes %}
+                        <li>
+                            <strong>Title:</strong> {{ note['title'] }}<br>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No notes available.</p>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>

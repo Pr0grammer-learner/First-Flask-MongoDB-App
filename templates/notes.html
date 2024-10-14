@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App - Notes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Notes</h1>
+        <ul class="list-group">
+            {% for note in notes %}
+            <li class="list-group-item">
+                <h5>{{ note.title }}</h5>
+                <p>{{ note.content }}</p>
+                <small>Tags: {{ note.tags | join(', ') }}</small>
+                <br>
+                {% if note.user_id %}
+                    {% set user = get_user_by_id(note.user_id) %}
+                    {% if user %}
+                        <small>Created by: {{ user.username }}</small>
+                    {% else %}
+                        <small>Created by: Unknown</small>
+                    {% endif %}
+                {% else %}
+                    <small>Created by: Unknown</small>
+                {% endif %}
+                <br>
+                <a href="{{ url_for('view_note', note_id=note['_id']) }}" class="btn btn-primary">View</a>
+                <a href="{{ url_for('edit_note', note_id=note['_id']) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ url_for('delete_note', note_id=note['_id']) }}" class="btn btn-danger">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
