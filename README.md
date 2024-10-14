@@ -23,17 +23,25 @@ Notes App — это веб-приложение для создания, ред
    ```bash
    cd notes_app
    ```
-3. 
-```bash
+3. Установите зависимости:
+   ```bash
    pip install -r requirements.txt
-```
+   ```
 4. Запустите приложение
-```bash
+   ```bash
    pip install -r requirements.txt
-```
+   ```
 5. Откройте браузер и перейдите по адресу http://127.0.0.1:5000/
 
-##Структура проекта
+## Используемые технологии
+
++ Python
++ Flask
++ MongoDB
++ Bootstrap
+
+## Структура проекта
+```CSharp
 notes_app/
 │
 ├── app.py                 # Главный файл приложения
@@ -44,9 +52,4 @@ notes_app/
 │   ├── ...
 │
 └── static/                # Статические файлы (CSS, JS и т.д.)
-
-##Используемые технологии
-*Python
-*Flask
-*MongoDB
-*Bootstrap
+```
