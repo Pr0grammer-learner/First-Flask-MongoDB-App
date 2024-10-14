@@ -17,7 +17,7 @@ Notes App — это веб-приложение для создания, ред
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/ваш_логин/notes_app.git
+   git clone https://github.com/Pr0grammer-learner/First-Flask-MongoDB-App.git
    ```
 2. Перейдите в каталог проекта
    ```bash
